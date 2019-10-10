@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1569421673 source:d:\unsa\9 semestre\compiladores\laboratorio\1\prueba2\main.cpp
+	<windows.h>
+	<gl/glut.h>
+
+976684972 d:\unsa\10 semestre\grafica\glut\include\gl\glut.h
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1570700259 source:d:\unsa\10 semestre\grafica\lab\prueba2\main.cpp
+	<windows.h>
+	<GL/glut.h>
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
+1570702155 source:d:\unsa\10 semestre\grafica\lab\1.1linea\main.cpp
+	<windows.h>
+	<GL/glut.h>
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
