@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1570709152 source:d:\unsa\10 semestre\grafica\lab\traslacion\main.cpp
+	<windows.h>
+	<stdio.h>
+	<math.h>
+	<time.h>
+	<GL/glut.h>
+
+976684972 d:\unsa\10 semestre\grafica\glut\include\gl\glut.h
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+

@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1570718807 source:d:\unsa\10 semestre\grafica\lab\rotacion\main.cpp
+	<windows.h>
+	<GL/glut.h>
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<iostream>
+	<vector>
+
+976684972 d:\unsa\10 semestre\grafica\glut\include\gl\glut.h
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
