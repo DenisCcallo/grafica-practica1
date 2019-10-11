@@ -91,22 +91,6 @@ void line(int xx1, int yy1, int xx2, int yy2)
     }
 }
 
-void traslacion(int px, int py, int tx, int ty)
-{
-    int fx = px, fy = py;
-    //glClear(GL_COLOR_BUFFER_BIT);
-    // update
-    px = px + tx;
-    py = py + ty;
-    // check overflow to keep point in screen
-    if (px > maxWD || px < 0 || py > maxHT || py < 0) {
-        px = fx;
-        py = fy;
-    }
-    plotPoint(px, py);
-    glFlush();
-}
-
 inline int round (const float a) { return int (a + 0.5); }
 void linea(int x0, int y0, int xEnd, int yEnd)
 {
@@ -124,7 +108,6 @@ void linea(int x0, int y0, int xEnd, int yEnd)
         x += xIncrement;
         y += yIncrement;
         plotPoint(round (x), round (y));
-        traslacion(100,200,x, y);
     }
 }
 void poligono()
