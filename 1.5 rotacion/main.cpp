@@ -20,11 +20,21 @@ void init()
     gluOrtho2D(0.0, 200.0, 0.0, 150.0);
     //gluOrtho2D(100.0,200.0,150.0,150.0);
 }
+void plotPoint(GLint x, GLint y)
+{
+    glBegin(GL_POINTS);
+    glColor3f(1,0,0);
+    glVertex2i(x,y);
+    glEnd();
+}
+
 void displayFcn(void)
 {
     glClear(GL_COLOR_BUFFER_BIT); //Borrar ventana devisualizacion.
     glColor3f(1.0,0.0,0.0); //color de punto.
+
     glPointSize(2.0); //tamaño de punto
+
 }
 
 void winReshapeFcn(GLint newWidth, GLint newHeight)
@@ -39,33 +49,29 @@ void winReshapeFcn(GLint newWidth, GLint newHeight)
     winHeight = newHeight;
 }
 
-void plotPoint(GLint x, GLint y)
-{
-    glBegin(GL_POINTS);
-    glColor3f(1,0,0);
-    glVertex2i(x,y);
-    glEnd();
-}
+
 
 void rotacion(int px, int py, int cx, int cy)
 {
-    float theta = 45.0;
+    float theta = 60.0;
     int xf, yf;
-
     if (theta >= (2.0 * 3.14159))
         theta = theta - (2.0 * 3.14159);
-
     //calcular rotacion..
+
+    //xf = (int)((float)(px) * cos(theta))  - ((float)(py) * sin(theta));
+    //yf = (int)((float)(px) * sin(theta))  + ((float)(py) * cos(theta));
     xf = cx + (int)((float)(px - cx) * cos(theta))  - ((float)(py - cy) * sin(theta));
     yf = cy + (int)((float)(px - cx) * sin(theta))  + ((float)(py - cy) * cos(theta));
-    plotPoint(cx, cy);
-    plotPoint(xf, yf); // punto de donde rota
+    plotPoint(xf, yf); // rotacion
     glFlush();
 }
 
 inline int round (const float a) { return int (a + 0.5); }
 void linea(int x0, int y0, int xEnd, int yEnd)
 {
+
+    glPointSize(2.0);
     int dx = xEnd - x0, dy = yEnd - y0, steps, k;
     float xIncrement, yIncrement, x = x0, y = y0;
     if (fabs (dx) > fabs (dy))
@@ -88,6 +94,9 @@ void linea(int x0, int y0, int xEnd, int yEnd)
 
 void poligono()
 {
+    glPointSize(4.0);
+    plotPoint(200,300);
+    glPointSize(2.0);
     int tam=coor1.size();
 
     for(int i=1; i<tam; i++)
@@ -133,7 +142,7 @@ int main(int argc, char**argv)
     glutInitWindowPosition(200,100);
 
     glutInitWindowSize(winWidth, winHeight );//ancho alto de ventana
-    glutCreateWindow("Poligono con puntos por mouse" );
+    glutCreateWindow("Rotacion" );
     init();
     glutDisplayFunc(displayFcn);
     glutReshapeFunc(winReshapeFcn);
