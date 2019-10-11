@@ -20,12 +20,12 @@ void displayFcn(void)
 {
     glClear(GL_COLOR_BUFFER_BIT); //Borrar ventana devisualizacion.
     glColor3f(1.0,0.0,0.0); //color de punto.
-    glPointSize(1.0); //tamaño de punto
+    glPointSize(1.0); //tamaÃ±o de punto
 }
 
 void winReshapeFcn(GLint newWidth, GLint newHeight)
 {
-    /*Reinicializar parametro de proyección y visor*/
+    /*Reinicializar parametro de proyecciÃ³n y visor*/
     glViewport(0, 0, newWidth, newHeight);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
@@ -42,46 +42,6 @@ void plotPoint(GLint x, GLint y)
     glVertex2i(x,y);
     glEnd();
 }
-void inc_line(int x1, int y1, int x2, int y2)
-{
-    int dx, dy, incE, incNE, d, x, y;
-    dx = x2 - x1;
-    dy = y2 - y1;
-    d = 2 * dy - dx; /* Valor inicial de d */
-    incE = 2 * dy; /* Incremento de E */
-    incNE = 2 * (dy - dx); /* Incremento de NE */
-    x = x1;
-    y = y1;
-    plotPoint(x, y);
-    while (x < x2){
-        if (d <= 0){
-            /* Escolhe E */
-            d = d + incE;
-            x = x + 1;
-        }else{
-            /* Escolhe NE */
-            d = d + incNE;
-            x = x + 1;
-            y = y + 1;
-        }/* end if */
-        plotPoint(x, y);
-    }/* end while */
-}/* end inc_line */
-
-void line(int xx1, int yy1, int xx2, int yy2)
-{
-    int x, y;
-    float a;
-    int valor;
-    a=(yy2-yy1)/(xx2-xx1);
-    for (x=xx1;x<=xx2;x++)
-    {
-        /* arredonda y */
-        y = (yy1 + a * (x - xx1));
-        plotPoint(x, y);
-    }
-}
-
 
 inline int round (const float a) { return int (a + 0.5); }
 void linea (int x0, int y0, int xEnd, int yEnd)
@@ -127,8 +87,6 @@ void mousePtPlot(GLint button , GLint action , GLint xMouse, GLint yMouse)
         if(bandx==true && bandy==true)
         {
             printf("dibuja\n");
-            //inc_line(x1,y1,x2,y2);
-            //line(x1,y1,x2,y2);
             linea(x1,y1,x2,y2);
             x1=-1;
             y1=-1;
