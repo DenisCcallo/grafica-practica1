@@ -27,12 +27,12 @@ void displayFcn(void)
 {
     glClear(GL_COLOR_BUFFER_BIT); //Borrar ventana devisualizacion.
     glColor3f(1.0,0.0,0.0); //color de punto.
-    glPointSize(2.0); //tamaño de punto
+    glPointSize(2.0); //tamaÃ±o de punto
 }
 
 void winReshapeFcn(GLint newWidth, GLint newHeight)
 {
-    /*Reinicializar parametro de proyección y visor*/
+    /*Reinicializar parametro de proyecciÃ³n y visor*/
     glViewport(0, 0, newWidth, newHeight);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
@@ -135,7 +135,7 @@ int main(int argc, char**argv)
     glutInitWindowPosition(200,100);
 
     glutInitWindowSize(winWidth, winHeight );//ancho alto de ventana
-    glutCreateWindow("Poligono con puntos por mouse" );
+    glutCreateWindow("Traslacion de figura" );
     init();
     glutDisplayFunc(displayFcn);
     glutReshapeFunc(winReshapeFcn);
